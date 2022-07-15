@@ -1,0 +1,33 @@
+name: Build
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Get olric version
+        id: olric-version
+        run: echo "::set-output name=version::$(cat go.mod | grep 'github.com/buraksezer/olric v' | awk '{print $2}')"
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v3
+        with:
+          images: dcard/olricd
+          tags: |
+            type=semver,pattern={{version}},value=${{ steps.olric-version.outputs.version }}
+            type=semver,pattern={{major}}.{{minor}},value=${{ steps.olric-version.outputs.version }}
+      - name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: ${{ github.ref == 'refs/heads/main' }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}

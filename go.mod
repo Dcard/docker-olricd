@@ -112,3 +112,5 @@ require (
 	sigs.k8s.io/structured-merge-diff/v4 v4.0.1 // indirect
 	sigs.k8s.io/yaml v1.2.0 // indirect
 )
+
+replace github.com/buraksezer/olric-cloud-plugin => github.com/tommy351/olric-cloud-plugin v0.3.0-beta.4.0.20220715094404-1f70b1ff9303

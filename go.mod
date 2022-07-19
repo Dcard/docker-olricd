@@ -24,9 +24,7 @@ require (
 	github.com/armon/go-metrics v0.0.0-20180917152333-f0300d1749da // indirect
 	github.com/aws/aws-sdk-go v1.35.1 // indirect
 	github.com/bits-and-blooms/bitset v1.2.0 // indirect
-	github.com/buraksezer/connpool v0.5.0 // indirect
 	github.com/buraksezer/consistent v0.9.0 // indirect
-	github.com/cespare/xxhash v1.1.0 // indirect
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/denverdino/aliyungo v0.0.0-20200929080117-4fc2b424761a // indirect
@@ -82,7 +80,6 @@ require (
 	github.com/tidwall/btree v1.1.0 // indirect
 	github.com/tidwall/match v1.1.1 // indirect
 	github.com/tidwall/redcon v1.4.5 // indirect
-	github.com/vmihailenco/msgpack v4.0.4+incompatible // indirect
 	github.com/vmihailenco/msgpack/v5 v5.3.5 // indirect
 	github.com/vmihailenco/tagparser/v2 v2.0.0 // indirect
 	github.com/vmware/govmomi v0.23.1 // indirect
@@ -113,4 +110,4 @@ require (
 	sigs.k8s.io/yaml v1.2.0 // indirect
 )
 
-replace github.com/buraksezer/olric-cloud-plugin => github.com/tommy351/olric-cloud-plugin v0.3.0-beta.4.0.20220719025636-01dd7f6c05b8
+replace github.com/buraksezer/olric-cloud-plugin => github.com/tommy351/olric-cloud-plugin v0.3.0-beta.4.0.20220719044626-ca4988e9b3b8

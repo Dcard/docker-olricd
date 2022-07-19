@@ -8,6 +8,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
       - name: Get olric version
         id: olric-version
         run: echo "::set-output name=version::$(cat go.mod | grep 'github.com/buraksezer/olric v' | awk '{print $2}')"
@@ -24,6 +28,7 @@ jobs:
           tags: |
             type=semver,pattern={{version}},value=${{ steps.olric-version.outputs.version }}
             type=semver,pattern={{major}}.{{minor}},value=${{ steps.olric-version.outputs.version }}
+            type=raw,value=latest,enable={{is_default_branch}}
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
@@ -31,3 +36,4 @@ jobs:
           push: ${{ github.ref == 'refs/heads/main' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          platforms: linux/amd64,linux/arm64

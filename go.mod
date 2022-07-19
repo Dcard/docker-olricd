@@ -113,4 +113,4 @@ require (
 	sigs.k8s.io/yaml v1.2.0 // indirect
 )
 
-replace github.com/buraksezer/olric-cloud-plugin => github.com/tommy351/olric-cloud-plugin v0.3.0-beta.4.0.20220715094404-1f70b1ff9303
+replace github.com/buraksezer/olric-cloud-plugin => github.com/tommy351/olric-cloud-plugin v0.3.0-beta.4.0.20220719025636-01dd7f6c05b8

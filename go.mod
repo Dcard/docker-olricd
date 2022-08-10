@@ -3,7 +3,7 @@ module github.com/Dcard/docker-olricd
 go 1.18
 
 require (
-	github.com/buraksezer/olric v0.5.0-beta.6
+	github.com/buraksezer/olric v0.5.0-beta.8
 	github.com/buraksezer/olric-cloud-plugin v0.3.0-beta.4
 )
 
@@ -20,7 +20,7 @@ require (
 	github.com/Azure/go-autorest/autorest/validation v0.3.0 // indirect
 	github.com/Azure/go-autorest/logger v0.2.0 // indirect
 	github.com/Azure/go-autorest/tracing v0.6.0 // indirect
-	github.com/RoaringBitmap/roaring v0.9.4 // indirect
+	github.com/RoaringBitmap/roaring v1.2.1 // indirect
 	github.com/armon/go-metrics v0.0.0-20180917152333-f0300d1749da // indirect
 	github.com/aws/aws-sdk-go v1.35.1 // indirect
 	github.com/bits-and-blooms/bitset v1.2.0 // indirect
